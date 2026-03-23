@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UniPortal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+    <span class="menu-btn" onclick="toggleMenu()">☰</span>
+    <h2>UniPortal</h2>
+</div>
+
+<!-- SIDEBAR -->
+<div id="sidebar" class="sidebar">
+    <a href="/dashboard">Home</a>
+    <a href="/courses">Courses</a>
+    <a href="/attendance">Attendance</a>
+    <a href="/events">Events</a>
+    <a href="/clubs">Clubs</a>
+    <a href="/feedback">Feedback</a>
+    <a href="/schedule">Schedule</a>
+</div>
+
+<!-- CONTENT -->
+<div class="main">
+    {% block content %}{% endblock %}
+</div>
+
+<script>
+function toggleMenu() {
+    let sidebar = document.getElementById("sidebar");
+    sidebar.style.left = (sidebar.style.left === "0px") ? "-220px" : "0px";
+}
+
+document.addEventListener("click", function(event) {
+    let sidebar = document.getElementById("sidebar");
+    let menuBtn = document.querySelector(".menu-btn");
+
+    if (!sidebar.contains(event.target) && !menuBtn.contains(event.target)) {
+        sidebar.style.left = "-220px";
+    }
+});
+</script>
+
+</body>
+</html>

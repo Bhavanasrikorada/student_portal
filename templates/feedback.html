@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>⭐ Give Feedback</h2>
+
+<form method="POST" class="feedback-form">
+
+    <label>Course</label>
+    <select name="course" required>
+        <option>Data Structures</option>
+        <option>Operating Systems</option>
+    </select>
+
+    <label>Faculty</label>
+    <select name="faculty" required>
+        <option>Ramesh</option>
+        <option>Sita</option>
+    </select>
+
+    <label>Feedback</label>
+    <textarea name="message" required></textarea>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+{% endblock %}

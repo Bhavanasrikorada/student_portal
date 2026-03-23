@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>📅 Today's Schedule</h2>
+
+<div class="greeting">
+    {% if holiday %}
+        <h3>No Classes Today 🎉</h3>
+    {% else %}
+        <ul>
+            {% for subject in classes %}
+                <li>{{ subject }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+
+{% endblock %}

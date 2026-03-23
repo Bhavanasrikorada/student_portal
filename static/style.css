@@ -1,0 +1,312 @@
+/* ---------------- GLOBAL ---------------- */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+}
+
+/* ---------------- AUTH CARD DESIGN ---------------- */
+
+.auth-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f7fb;
+}
+
+.auth-card {
+    width: 750px;
+    height: 420px;
+    display: flex;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.15);
+}
+
+/* LEFT SIDE */
+.card-left {
+    flex: 1;
+    background: linear-gradient(to bottom right, #6a85f1, #00c6ff);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card-left img {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+/* RIGHT SIDE */
+.card-right {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-right h2 {
+    margin-bottom: 15px;
+}
+
+.card-right input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.card-right button {
+    width: 100%;
+    padding: 10px;
+    background: #6a85f1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.card-right button:hover {
+    background: #5a75e0;
+}
+
+.card-right p {
+    margin-top: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .auth-card {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+}
+
+/* ---------------- TOPBAR ---------------- */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: white;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-btn {
+    font-size: 26px;
+    cursor: pointer;
+    margin-right: 50px;
+}
+
+.topbar h2 {
+    margin: 0;
+}
+
+/* ---------------- SIDEBAR ---------------- */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -220px;
+    width: 220px;
+    height: 100%;
+    background: #6a85f1;
+    padding-top: 60px;
+    transition: 0.3s;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* ---------------- MAIN ---------------- */
+
+.main {
+    padding: 20px;
+}
+
+/* Greeting */
+.greeting {
+    background: white;
+    padding: 18px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.08);
+}
+
+/* ---------------- HIGHLIGHT ---------------- */
+
+.highlight-link {
+    text-decoration: none;
+}
+
+.highlight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #6a85f1, #00c6ff);
+    color: white;
+    padding: 18px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.arrow {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* ---------------- GRID ---------------- */
+
+h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* Cards */
+.box {
+    padding: 15px;
+    border-radius: 14px;
+    height: 110px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.06);
+    transition: 0.2s;
+}
+
+.box:hover {
+    transform: translateY(-3px);
+}
+
+.box:nth-child(1) { background: #e6f4ea; }
+.box:nth-child(2) { background: #fde8e8; }
+.box:nth-child(3) { background: #ede9fe; }
+.box:nth-child(4) { background: #e0f2fe; }
+.box:nth-child(5) { background: #fff4e6; }
+.box:nth-child(6) { background: #e6fff9; }
+.box:nth-child(7) { background: #f0e6ff; }
+
+.card-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon {
+    font-size: 22px;
+}
+
+.box h4 {
+    margin: 0;
+    color: black;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 8px 0;
+}
+
+.value {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ---------------- COURSES ---------------- */
+
+.course-box {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.08);
+}
+
+/* ---------------- ATTENDANCE ---------------- */
+
+.attendance-box {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.progress {
+    background: #eee;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.progress-fill {
+    background: #4facfe;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* ---------------- EVENTS ---------------- */
+
+.event-box {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+
+/* ---------------- CLUBS ---------------- */
+
+.club-box {
+    background: #e6f4ea;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+
+/* ---------------- FEEDBACK ---------------- */
+
+.feedback-form {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.feedback-form textarea {
+    height: 100px;
+}
+
+.feedback-form button {
+    background: #4facfe;
+}

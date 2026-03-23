@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="greeting">
+    <h2>Hi {{ student_id }}</h2>
+    <p>Good Afternoon 👋</p>
+    <p>Sunday, 22 March</p>
+</div>
+
+<a href="/schedule" class="highlight-link">
+    <div class="highlight">
+        <span>📅 View Today's Schedule</span>
+        <span class="arrow">></span>
+    </div>
+</a>
+
+<h3>ESSENTIALS</h3>
+
+<div class="grid">
+
+    <div class="box">
+        <div class="card-top">
+            <span class="icon">📊</span>
+            <h4>Attendance</h4>
+        </div>
+        <hr>
+        <p class="value">84%</p>
+    </div>
+
+    <div class="box">
+        <div class="card-top">
+            <span class="icon">💰</span>
+            <h4>Fees</h4>
+        </div>
+        <hr>
+        <p class="value">0.00</p>
+    </div>
+
+    <div class="box">
+        <div class="card-top">
+            <span class="icon">🎓</span>
+            <h4>CGPA</h4>
+        </div>
+        <hr>
+        <p class="value">8.5</p>
+    </div>
+
+    <div class="box">
+        <div class="card-top">
+            <span class="icon">⚠️</span>
+            <h4>Backlogs</h4>
+        </div>
+        <hr>
+        <p class="value">0</p>
+    </div>
+
+</div>
+
+{% endblock %}
