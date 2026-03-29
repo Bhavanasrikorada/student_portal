@@ -380,3 +380,43 @@ hr {
 .dropdown-content a:hover {
     background: #f0f0f0;
 }
+.sidebar {
+    position: fixed;
+    left: -220px;
+    top: 0;
+    width: 220px;
+    height: 100%;
+    background: #5c7cfa;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+}
+
+/* Make links consistent */
+.sidebar a {
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Push settings to bottom */
+.sidebar-bottom {
+    margin-top: auto;
+    padding: 10px 20px;
+}
+
+/* Match styling with other links */
+.dropdown {
+    color: white;
+    cursor: pointer;
+    padding: 12px 0;
+}
+
+/* Dropdown items */
+.dropdown-content a {
+    display: block;
+    padding: 8px 0;
+    color: white;
+    text-decoration: none;
+}
