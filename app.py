@@ -157,7 +157,29 @@ def change_password():
 
     return render_template("change_password.html")  
 
+@app.route('/courses')
+def courses():
+    return render_template("courses.html")
 
+@app.route('/attendance')
+def attendance():
+    return render_template("attendance.html")
+
+@app.route('/events')
+def events():
+    return render_template("events.html")
+
+@app.route('/clubs')
+def clubs():
+    return render_template("clubs.html")
+
+@app.route('/feedback')
+def feedback():
+    return render_template("feedback.html")
+
+@app.route('/schedule')
+def schedule():
+    return render_template("schedule.html")
 # ---------- LOGOUT ----------
 @app.route("/logout")
 def logout():
