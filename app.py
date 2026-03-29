@@ -33,7 +33,7 @@ create_table()
 def is_logged_in():
     return "user" in session
 
-
+print("ALL ROUTES STARTING")
 # ---------- ROUTES ----------
 
 @app.route("/")
@@ -167,7 +167,7 @@ def logout():
 @app.route('/test')
 def test():
     return "TEST WORKING"
-
+print("ALL ROUTES ENDING")
 # ---------- RUN ----------
 import os
 if __name__ == "__main__":
