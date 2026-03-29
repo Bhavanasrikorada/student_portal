@@ -16,18 +16,49 @@
         <div class="card-right">
             <h2>Login</h2>
 
-            <form method="POST" action="/dashboard">
-                <input type="text" name="login_id" placeholder="Email or Roll Number" required>
-                <input type="password" name="password" placeholder="Password" required>
+            <!-- FIX: action changed -->
+             {% if error %}
+<p style="color:red; font-size:13px;">{{ error }}</p>
+{% endif %}
+            <form method="POST" action="/login">
+
+                <!-- FIX: name changed to match backend -->
+                <input type="text" name="roll" placeholder="Roll Number" required>
+
+                <div class="password-box">
+                    <input type="password" id="login_password" name="password" placeholder="Password" required>
+                    <span class="eye" onclick="showPasswordOnce('login_password', this)">
+    <img src="{{ url_for('static', filename='images/close.png') }}" width="20">
+</span>
+                </div>
 
                 <button type="submit">Login</button>
+
             </form>
 
-            <p>New user? <a href="/register">Register</a></p>
+            <p>Don't have an account? <a href="/register">Register</a></p>
+
         </div>
 
     </div>
 </div>
+
+<script>
+function showPasswordOnce(id, element) {
+    let pwd = document.getElementById(id);
+    let img = element.querySelector("img");
+
+    // show password + open eye
+    pwd.type = "text";
+    img.src = "{{ url_for('static', filename='images/show.png') }}";
+
+    // auto hide after 2 sec
+    setTimeout(() => {
+        pwd.type = "password";
+        img.src = "{{ url_for('static', filename='images/close.png') }}";
+    }, 2000);
+}
+</script>
 
 </body>
 </html>

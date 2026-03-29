@@ -16,19 +16,55 @@
         <div class="card-right">
             <h2>Register</h2>
 
-            <form method="POST" action="/register_user">
-                <input type="text" name="student_id" placeholder="Roll Number" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Password" required>
+            {% if error %}
+            <p style="color:red; font-weight:bold;">{{ error }}</p>
+            {% endif %}
 
+            <!-- FIX: action changed -->
+            <form method="POST" action="/register">
+
+                <!-- FIX: name changed -->
+                <input type="text" name="roll" placeholder="Roll Number" required>
+
+                <input type="email" name="email" placeholder="Email" required>
+                <small class="password-hint">
+                Password must be at least 8 characters long and contain a mix of letters and numbers.
+                </small>
+                <div class="password-box">
+                    <input type="password" id="register_password" name="password" placeholder="Password" required>
+                    <span class="eye" onclick="showPasswordOnce('register_password', this)">
+    <img src="{{ url_for('static', filename='images/close.png') }}" width="20">
+</span>
+                </div>
+
+                
                 <button type="submit">Register</button>
+
             </form>
 
             <p>Already have an account? <a href="/">Login</a></p>
+
         </div>
 
     </div>
 </div>
+
+<script>
+function showPasswordOnce(id, element) {
+    let pwd = document.getElementById(id);
+    let img = element.querySelector("img");
+
+    // show password + open eye
+    pwd.type = "text";
+    img.src = "{{ url_for('static', filename='images/show.png') }}";
+
+    // auto hide after 2 sec
+    setTimeout(() => {
+        pwd.type = "password";
+        img.src = "{{ url_for('static', filename='images/close.png') }}";
+    }, 2000);
+}
+</script>
 
 </body>
 </html>
