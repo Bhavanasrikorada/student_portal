@@ -164,6 +164,9 @@ def logout():
     session.clear()
     return redirect(url_for("home"))
 
+@app.route('/test')
+def test():
+    return "TEST WORKING"
 
 # ---------- RUN ----------
 import os
