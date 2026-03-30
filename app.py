@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
 print("THIS IS THE NEW APP VERSION")
 app = Flask(__name__)
 app.secret_key = "secret123"
@@ -179,7 +180,14 @@ def feedback():
 
 @app.route('/schedule')
 def schedule():
-    return render_template("schedule.html")
+    today = datetime.now().strftime("%A")
+
+    if today == "Sunday":
+        return render_template("schedule.html", holiday=True)
+
+    classes = ["Math", "Physics", "DSA"]  # your subjects
+
+    return render_template("schedule.html", holiday=False, classes=classes)
 # ---------- LOGOUT ----------
 @app.route("/logout")
 def logout():
